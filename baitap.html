@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>haizz</title>
+</head>
+<body>
+<script>
+    function quatao() {
+        this.weight = 1;
+        this.getWeight =function () {
+            return this.weight;
+        };
+        this.isEmpty = function () {
+            if (this.weight <= 0){
+                alert("Đã hết")
+            }
+            else {
+                alert(this.weight)
+            }
+        }
+    }
+    function human(name,gender,weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        this.getName = function () {
+            return this.name
+        }
+        this.setWeight =function () {
+            this.weight = weight;
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.talk = function () {
+            console.log("Hello minh ten la " + this.name);
+        }
+        this.eat = function (quatao) {
+            if (quatao.weight> 0){
+                console.log("khong an")
+            }
+            else {
+                this.weight ++;
+                quatao.weight --;
+                console.log(this.weight);
+                alert(quatao.weight);
+            }
+        }
+    }
+    let adam = new human('adam',true,60);
+    let eva = new human("eva",false,50);
+    let tao = new quatao();
+</script>
+</body>
+</html>
